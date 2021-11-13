@@ -27,7 +27,6 @@ class Test05_04 {
 				new Dish("salmon", false, 450, Dish.Type.FISH)//
 		);
 
-		// 5.4.1 프레디케이트가 적어도 한 요소와 일치하는지 확인
 		// anyMatch는 불리언을 반환하므로 최종 연산이다
 		System.out.println("5.4.1 프레디케이트가 적어도 한 요소와 일치하는지 확인");
 		if (menu.stream().anyMatch(Dish::isVegetarian)) {
@@ -35,7 +34,6 @@ class Test05_04 {
 		}
 		System.out.println();
 
-		// 5.4.2 프레디케이트가 모든 요소와 일치하는지 검사
 		System.out.println("5.4.2 프레디케이트가 모든 요소와 일치하는지 검사");
 		if (menu.stream().allMatch(Dish::isVegetarian)) {
 			System.out.println("Menus are all vegetarian friendly!");
@@ -51,16 +49,15 @@ class Test05_04 {
 		}
 		System.out.println();
 
-		// 5.4.3 요소 검색
 		// Optional이란? 다음 소스는 값이 있으면 검색되고 값이 없으면 출력되지 않는다.
 		System.out.println("5.4.3 요소 검색");
 		Optional<Dish> dish = findAnyVegetarianDish();
 		dish.ifPresent(d -> System.out.println(d.getName()));
 		System.out.println();
 		
-		/// 5.4.4 첫 번째 요소
 		System.out.println("5.4.4 첫 번째 요소");
 		List<Integer> someNumbers = Arrays.asList(1, 2, 3, 4, 5);
+		// NullPointerException을 피하게 해줄 수 있는 Optional
 		Optional<Integer> firstSquareDivisibleByThree = someNumbers.stream()
 				.map(x -> x * x)
 				.filter(x -> x % 3 == 0)

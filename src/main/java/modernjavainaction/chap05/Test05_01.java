@@ -31,14 +31,19 @@ class Test05_01 {
 		// 5.1 필터링
 		// 5.1.1 프레디케이트 필터링
 		System.out.println("5.1.1 프레디케이트 필터링");
-		List<Dish> vegetarianMenu = menu.stream().filter(Dish::isVegetarian).collect(Collectors.toList());
+		List<Dish> vegetarianMenu = menu.stream()
+				.filter(Dish::isVegetarian)
+				.collect(Collectors.toList());
 		System.out.println(vegetarianMenu);
 		System.out.println();
 
 		// 5.1.2 고유 요소 필터링
 		System.out.println("5.1.2 고유 요소 필터링");
-		List<Integer> numbers = Arrays.asList(1, 2, 1, 3, 3, 2, 4);
-		numbers.stream().filter(i -> i % 2 == 0).distinct().forEach(System.out::println);
+		List<Integer> numbers = Arrays.asList(1, 2, 1, 3, 3, 2, 4, 4, 4, 4, 4, 4);
+		numbers.stream()
+		.filter(i -> i % 2 == 0) // 중간
+		.distinct() // 중간
+		.forEach(System.out::println); // 최종
 		System.out.println();
 
 	}

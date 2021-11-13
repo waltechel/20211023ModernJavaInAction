@@ -31,8 +31,8 @@ public class Test05_05Reducing {
 		// 초깃값은 0, 두 요소를 조합해서 새로운 값을 만드는 BinaryOperator<T>
 		System.out.println("5.5.1 요소의 합");
 		List<Integer> numbers = Arrays.asList(3, 4, 5, 1, 2);
-		int sum = numbers.stream().reduce(0, (a, b) -> a + b);
-		System.out.println(sum + "\n");
+		int sum1 = numbers.stream().reduce(0, (a, b) -> a + b);
+		System.out.println(sum1 + "\n");
 
 		int sum2 = numbers.stream().reduce(0, Integer::sum);
 		System.out.println(sum2 + "\n");

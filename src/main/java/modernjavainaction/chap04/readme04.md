@@ -3,6 +3,7 @@
 ## 4.1 스트림이란 무엇인가?
 
 - 스트림을 사용하면 데이터를 분명하게 병렬로 처리할 수 있다
+- 자바 언어는 멀티스레드 이벤트 루프 
 
 ```java
 // 스트림을 사용하면 데이터를 분명하게 병렬로 처리할 수 있다
@@ -41,7 +42,7 @@ List<String> lowCaloricDishesName = menu.parallelStream()
 	- 현재 자료구조가 포함하는 모든 값을 메모리에 저장하는 자료구조
 - 스트림
 	- 스트림에 요소를 추가하거나 제거할 수 없다
-	- 사용자가 요청하는 ㄱ값만 스트림에서 추출한다
+	- 사용자가 요청하는 값만 스트림에서 추출한다
 
 ### 4.3.1 딱 한 번만 탐색할 수 있다
 
@@ -53,6 +54,13 @@ List<String> lowCaloricDishesName = menu.parallelStream()
 - 스트림 라이브러리는 반복을 알아서 처리하고 결과 스트림을 알아서 저장하는데, 이를 내부 반복(Internal iteration) 이라 한다.
 
 ```java
+// 컬렉션 인터페이스
+List<String> menuNames = new ArrayList<>();
+for(Menu m : menu){
+	menuNames.add(m.getName());
+}
+
+// 스트림의 내부 반복
 List<String> menuNames = menu.stream()
 						.map(Dish::getName)
 						.collect(toList());
@@ -60,7 +68,7 @@ List<String> menuNames = menu.stream()
 
 ## 4.4 스트림 연산
 
-- 연결할 수 있는 연산을 중간 연산, 스트림을 닫는 연산을 최종 연산이라고 한다. 
+- 연결할 수 있는 연산을 중간 연산, 스트림을 닫는 연산을 최종 연산(종단 연산terminal operation)이라고 한다. 
 
 ### 4.4.1 중간 연산
 

@@ -46,11 +46,14 @@ class Test05_03 {
 		System.out.println("고유 문자로 이루어진 리스트를 반환한다.");
 		System.out.println("flatMap을 이용해서 생성된 스트림들을 하나의 스트림으로 평탄화");
 		// flatMap
-		words.stream().flatMap((String line) -> Arrays.stream(line.split(""))) // flatMap을 이용해서 스트림들을 하나의 문자 스트림으로 변환  
-				.distinct().forEach(System.out::print);
+		words.stream() //
+		.flatMap((String line) -> Arrays.stream(line.split(""))) // flatMap을 이용해서 스트림들을 하나의 문자 스트림으로 변환  
+				.distinct()
+				.forEach(System.out::print);
 		System.out.println();
 
 		// flatMap
+		System.out.println();
 		List<Integer> numbers1 = Arrays.asList(1, 2, 3, 4, 5);
 		List<Integer> numbers2 = Arrays.asList(6, 7, 8);
 		List<int[]> pairs = numbers1.stream()//
