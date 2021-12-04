@@ -1,0 +1,210 @@
+
+D:\repositories\20211023ModernJavaInAction>java -jar ./target/benchmarks.jar Test07_03ParallelStreamBenchmark
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.openjdk.jmh.util.Utils (file:/D:/repositories/20211023ModernJavaInAction/target/benchmarks.jar) to field java.io.Console.cs
+WARNING: Please consider reporting this to the maintainers of org.openjdk.jmh.util.Utils
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+No matching benchmarks. Miss-spelled regexp?
+Use EXTRA verbose mode to debug the pattern matching.
+
+D:\repositories\20211023ModernJavaInAction>java -jar ./target/benchmarks.jar Test07_03ParallelStreamBenchmark
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.openjdk.jmh.util.Utils (file:/D:/repositories/20211023ModernJavaInAction/target/benchmarks.jar) to field java.io.Console.cs
+WARNING: Please consider reporting this to the maintainers of org.openjdk.jmh.util.Utils
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+No matching benchmarks. Miss-spelled regexp?
+Use EXTRA verbose mode to debug the pattern matching.
+
+D:\repositories\20211023ModernJavaInAction>java -jar ./target/benchmarks.jar ParallelStreamBenchmark
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.openjdk.jmh.util.Utils (file:/D:/repositories/20211023ModernJavaInAction/target/benchmarks.jar) to field java.io.Console.cs
+WARNING: Please consider reporting this to the maintainers of org.openjdk.jmh.util.Utils
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+# JMH version: 1.21
+# VM version: JDK 11.0.11, Java HotSpot(TM) 64-Bit Server VM, 11.0.11+9-LTS-194
+# VM invoker: C:\Program Files\Java\jdk-11.0.11\bin\java.exe
+# VM options: -Xms4G -Xmx4G
+# Warmup: 3 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: modernjavainaction.chap07.ParallelStreamBenchmark.iterativeSum
+
+# Run progress: 0.00% complete, ETA 00:08:20
+# Fork: 1 of 2
+# Warmup Iteration   1: 4.212 ms/op
+# Warmup Iteration   2: 4.087 ms/op
+# Warmup Iteration   3: 4.346 ms/op
+Iteration   1: 4.199 ms/op
+Iteration   2: 4.280 ms/op
+
+# Run progress: 10.00% complete, ETA 00:07:44
+# Fork: 2 of 2
+# Warmup Iteration   1: 4.339 ms/op
+# Warmup Iteration   2: 4.295 ms/op
+# Warmup Iteration   3: 4.084 ms/op
+Iteration   1: 4.087 ms/op
+Iteration   2: 3.996 ms/op
+
+
+Result "modernjavainaction.chap07.ParallelStreamBenchmark.iterativeSum":
+  4.140 ±(99.9%) 0.807 ms/op [Average]
+  (min, avg, max) = (3.996, 4.140, 4.280), stdev = 0.125
+  CI (99.9%): [3.334, 4.947] (assumes normal distribution)
+
+
+# JMH version: 1.21
+# VM version: JDK 11.0.11, Java HotSpot(TM) 64-Bit Server VM, 11.0.11+9-LTS-194
+# VM invoker: C:\Program Files\Java\jdk-11.0.11\bin\java.exe
+# VM options: -Xms4G -Xmx4G
+# Warmup: 3 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: modernjavainaction.chap07.ParallelStreamBenchmark.parallelRangedSum
+
+# Run progress: 20.00% complete, ETA 00:06:53
+# Fork: 1 of 2
+# Warmup Iteration   1: 9.397 ms/op
+# Warmup Iteration   2: 19.320 ms/op
+# Warmup Iteration   3: 16.483 ms/op
+Iteration   1: 12.678 ms/op
+Iteration   2: 12.445 ms/op
+
+# Run progress: 30.00% complete, ETA 00:06:00
+# Fork: 2 of 2
+# Warmup Iteration   1: 9.128 ms/op
+# Warmup Iteration   2: 18.870 ms/op
+# Warmup Iteration   3: 18.499 ms/op
+Iteration   1: 18.667 ms/op
+Iteration   2: 18.694 ms/op
+
+
+Result "modernjavainaction.chap07.ParallelStreamBenchmark.parallelRangedSum":
+  15.621 ±(99.9%) 22.836 ms/op [Average]
+  (min, avg, max) = (12.445, 15.621, 18.694), stdev = 3.534
+  CI (99.9%): [? 0, 38.457] (assumes normal distribution)
+
+
+# JMH version: 1.21
+# VM version: JDK 11.0.11, Java HotSpot(TM) 64-Bit Server VM, 11.0.11+9-LTS-194
+# VM invoker: C:\Program Files\Java\jdk-11.0.11\bin\java.exe
+# VM options: -Xms4G -Xmx4G
+# Warmup: 3 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: modernjavainaction.chap07.ParallelStreamBenchmark.parallelSum
+
+# Run progress: 40.00% complete, ETA 00:05:09
+# Fork: 1 of 2
+# Warmup Iteration   1: 127.522 ms/op
+# Warmup Iteration   2: 105.932 ms/op
+# Warmup Iteration   3: 105.993 ms/op
+Iteration   1: 107.591 ms/op
+Iteration   2: 111.698 ms/op
+
+# Run progress: 50.00% complete, ETA 00:04:17
+# Fork: 2 of 2
+# Warmup Iteration   1: 130.690 ms/op
+# Warmup Iteration   2: 108.356 ms/op
+# Warmup Iteration   3: 103.040 ms/op
+Iteration   1: 108.924 ms/op
+Iteration   2: 111.779 ms/op
+
+
+Result "modernjavainaction.chap07.ParallelStreamBenchmark.parallelSum":
+  109.998 ±(99.9%) 13.458 ms/op [Average]
+  (min, avg, max) = (107.591, 109.998, 111.779), stdev = 2.083
+  CI (99.9%): [96.540, 123.456] (assumes normal distribution)
+
+
+# JMH version: 1.21
+# VM version: JDK 11.0.11, Java HotSpot(TM) 64-Bit Server VM, 11.0.11+9-LTS-194
+# VM invoker: C:\Program Files\Java\jdk-11.0.11\bin\java.exe
+# VM options: -Xms4G -Xmx4G
+# Warmup: 3 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: modernjavainaction.chap07.ParallelStreamBenchmark.rangedSum
+
+# Run progress: 60.00% complete, ETA 00:03:26
+# Fork: 1 of 2
+# Warmup Iteration   1: 5.544 ms/op
+# Warmup Iteration   2: 5.102 ms/op
+# Warmup Iteration   3: 5.021 ms/op
+Iteration   1: 5.230 ms/op
+Iteration   2: 5.331 ms/op
+
+# Run progress: 70.00% complete, ETA 00:02:34
+# Fork: 2 of 2
+# Warmup Iteration   1: 5.924 ms/op
+# Warmup Iteration   2: 5.634 ms/op
+# Warmup Iteration   3: 5.021 ms/op
+Iteration   1: 5.018 ms/op
+Iteration   2: 4.997 ms/op
+
+
+Result "modernjavainaction.chap07.ParallelStreamBenchmark.rangedSum":
+  5.144 ±(99.9%) 1.056 ms/op [Average]
+  (min, avg, max) = (4.997, 5.144, 5.331), stdev = 0.163
+  CI (99.9%): [4.088, 6.200] (assumes normal distribution)
+
+
+# JMH version: 1.21
+# VM version: JDK 11.0.11, Java HotSpot(TM) 64-Bit Server VM, 11.0.11+9-LTS-194
+# VM invoker: C:\Program Files\Java\jdk-11.0.11\bin\java.exe
+# VM options: -Xms4G -Xmx4G
+# Warmup: 3 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: modernjavainaction.chap07.ParallelStreamBenchmark.sequentialSum
+
+# Run progress: 80.00% complete, ETA 00:01:43
+# Fork: 1 of 2
+# Warmup Iteration   1: 91.086 ms/op
+# Warmup Iteration   2: 88.348 ms/op
+# Warmup Iteration   3: 88.410 ms/op
+Iteration   1: 91.353 ms/op
+Iteration   2: 87.512 ms/op
+
+# Run progress: 90.00% complete, ETA 00:00:51
+# Fork: 2 of 2
+# Warmup Iteration   1: 89.836 ms/op
+# Warmup Iteration   2: 91.374 ms/op
+# Warmup Iteration   3: 91.275 ms/op
+Iteration   1: 94.290 ms/op
+Iteration   2: 88.105 ms/op
+
+
+Result "modernjavainaction.chap07.ParallelStreamBenchmark.sequentialSum":
+  90.315 ±(99.9%) 20.305 ms/op [Average]
+  (min, avg, max) = (87.512, 90.315, 94.290), stdev = 3.142
+  CI (99.9%): [70.010, 110.619] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:08:36
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                                  Mode  Cnt    Score    Error  Units
+ParallelStreamBenchmark.iterativeSum       avgt    4    4.140 ±  0.807  ms/op
+ParallelStreamBenchmark.parallelRangedSum  avgt    4   15.621 ± 22.836  ms/op
+ParallelStreamBenchmark.parallelSum        avgt    4  109.998 ± 13.458  ms/op
+ParallelStreamBenchmark.rangedSum          avgt    4    5.144 ±  1.056  ms/op
+ParallelStreamBenchmark.sequentialSum      avgt    4   90.315 ± 20.305  ms/op
+
