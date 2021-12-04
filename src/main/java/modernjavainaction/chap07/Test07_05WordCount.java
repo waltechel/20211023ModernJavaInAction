@@ -49,25 +49,49 @@ public class Test07_05WordCount {
 		SENTENCE1 = sb1.toString();
 		SENTENCE2 = sb2.toString();
 		
-		long start = System.nanoTime();
-		System.out.println("Found " + countWordsIterativelyHandmade(SENTENCE1) + " words");		
-		System.out.println("Found " + countWordsIterativelyHandmade(SENTENCE2) + " words");		
-		System.out.println("countWordsIterativelyHandmade Result: " + (System.nanoTime() - start) / 1_000_000);
-		
-		start = System.nanoTime();
-		System.out.println("Found " + countWordsIteratively(SENTENCE1) + " words");
-		System.out.println("Found " + countWordsIteratively(SENTENCE2) + " words");
-		System.out.println("countWordsIteratively Result: " + (System.nanoTime() - start) / 1_000_000);
-		
-		start = System.nanoTime();
-		System.out.println("Found " + countWords(SENTENCE1) + " words");
-		System.out.println("Found " + countWords(SENTENCE2) + " words");
-		System.out.println("countWords Result: " + (System.nanoTime() - start) / 1_000_000);
-		
 		Spliterator<Character> spliterator1 = new WordCounterSpliterator(SENTENCE1);
 		Stream<Character> stream1 = StreamSupport.stream(spliterator1, true);
 		Spliterator<Character> spliterator2 = new WordCounterSpliterator(SENTENCE2);
 		Stream<Character> stream2 = StreamSupport.stream(spliterator2, true);
+		long start;
+		
+		System.gc(); 
+		countWordsIterativelyHandmade();
+		System.gc(); 
+		countWordsIteratively();
+		System.gc(); 
+		countWords();
+		System.gc(); 
+		countWordsDivideandConquer(stream1, stream2);
+		
+	}
+
+	private static void countWords() {
+		long start;
+		start = System.nanoTime();
+		System.out.println("Found " + countWords(SENTENCE1) + " words");
+		System.out.println("Found " + countWords(SENTENCE2) + " words");
+		System.out.println("countWords Result: " + (System.nanoTime() - start) / 1_000_000);
+	}
+
+	private static void countWordsIteratively() {
+		long start;
+		start = System.nanoTime();
+		System.out.println("Found " + countWordsIteratively(SENTENCE1) + " words");
+		System.out.println("Found " + countWordsIteratively(SENTENCE2) + " words");
+		System.out.println("countWordsIteratively Result: " + (System.nanoTime() - start) / 1_000_000);
+	}
+
+	private static void countWordsIterativelyHandmade() {
+		long start;
+		start = System.nanoTime();
+		System.out.println("Found " + countWordsIterativelyHandmade(SENTENCE1) + " words");		
+		System.out.println("Found " + countWordsIterativelyHandmade(SENTENCE2) + " words");		
+		System.out.println("countWordsIterativelyHandmade Result: " + (System.nanoTime() - start) / 1_000_000);
+	}
+
+	private static void countWordsDivideandConquer(Stream<Character> stream1, Stream<Character> stream2) {
+		long start;
 		start = System.nanoTime();
 		System.out.println("Found " + countWords(stream1) + " words");
 		System.out.println("Found " + countWords(stream2) + " words");

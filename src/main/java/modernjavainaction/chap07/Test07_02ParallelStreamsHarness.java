@@ -9,6 +9,7 @@ public class Test07_02ParallelStreamsHarness {
 
 	public static void main(String[] args) {
 		
+		// Result: 5000000050000000
 		// Iterative Sum done in: 41 msecs
 		// Sequential Sum done in: 1328 msecs
 		// Parallel forkJoinSum done in: 6857 msecs
@@ -18,7 +19,6 @@ public class Test07_02ParallelStreamsHarness {
 		// SideEffect sum done in: 544 msecs
 		// SideEffect parallel sum done in: 664 msecs
 		// Result: 2713697880666365
-		
 		
 		System.out.println("Iterative Sum done in: " + measurePerf(Test07_01ParallelStreams::iterativeSum, 100_000_000L) + " msecs");
 		System.out.println("Sequential Sum done in: " + measurePerf(Test07_01ParallelStreams::sequentialSum, 100_000_000L) + " msecs");
