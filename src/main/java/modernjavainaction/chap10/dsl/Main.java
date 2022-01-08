@@ -74,6 +74,10 @@ public class Main {
     System.out.println(order);
   }
 
+  /*
+   * 메서드 체인으로 주식 거래 주문 만들기
+   * 진짜 좋은 소스 같아 보임
+   */
   public void methodChaining() {
     Order order = forCustomer("BigBank")
         .buy(80).stock("IBM").on("NYSE").at(125.00)
